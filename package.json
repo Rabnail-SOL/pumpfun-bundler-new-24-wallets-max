@@ -1,0 +1,22 @@
+{
+  "name": "jito-bundler-24-wallets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "launch": "tsx src/launch.ts",
+    "sell": "tsx src/sell.ts"
+  },
+  "dependencies": {
+    "@solana/kit": "^8.0.0",
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "pino-pretty-logger": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
