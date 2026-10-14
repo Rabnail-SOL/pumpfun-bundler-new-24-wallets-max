@@ -18,6 +18,14 @@ Each buy transaction holds 6 wallets, because a combined token-account create an
 
 `BUY_SOL` is the exact amount spent on each buy. The program calculates the tokens. The quote walks the bonding curve from wallet 1 through the last wallet, so later buys use the price after the earlier buys in the same bundle. `SLIPPAGE_BPS` lowers the minimum tokens accepted.
 
+Here is simple test result you can check.
+```
+Bundle ID: 68e31a6a7ad6c7229525dd0b407a6cf41aaa0da8fd0bf20f0ab1c8a2f0eef5a4 (2 tx for demo, one tx is for creation, one tx is for 6 wallet sets)
+Token Mint: DfB6BesYF8ehEGQc9Rzxs72ef8uosqHdWhK3JkjfUrg6
+Create + jito tip tx: https://solscan.io/tx/3JSUQJPjAq2KVbGcg5rfpz9bjYy6kMxyumg32XgPN5oaLkfsX2pVneY4o3jRJt7rZt6ZAKNztuZ3QueUvQFMbj7r
+6 wallets buy tx: https://solscan.io/tx/3hiApaXQCdzsWXosXSou1ELo944hqpBXz1eSw2vSRDJWATaVRL4WEGdiwdQKWvzvkBDBnFDq5fBj9bhwq6w3WAK6
+```
+
 The main wallet funds the buyers first, outside the bundle. Every buyer receives `BUY_SOL`, plus 0.001844 SOL for the volume account and 0.000891 SOL so the wallet stays rent-exempt. The lead wallet of each buy transaction also receives the token-account rent and transaction fee for that transaction. The buy transactions do not include the main wallet.
 
 With fewer than 24 wallets the later buy transactions are omitted. 10, 15, and 20 are valid.
